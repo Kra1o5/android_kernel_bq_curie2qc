@@ -1833,7 +1833,7 @@ static struct platform_device device_ion = {
  * SDMMC devices,  include the module of SD,MMC,and sdio.noted by xbw at 2012-03-05
 **************************************************************************************************/
 #ifdef CONFIG_SDMMC_RK29
-#include "board-LR097-sdmmc-config.c"
+#include "../mach-rk30/board-LR097-sdmmc-config.c"
 #include "../plat-rk/rk-sdmmc-ops.c"
 #include "../plat-rk/rk-sdmmc-wifi.c"
 #endif //endif ---#ifdef CONFIG_SDMMC_RK29
@@ -2497,7 +2497,7 @@ struct platform_device pwm_regulator_device[1] = {
 
 #ifdef CONFIG_RK29_VMAC
 #define PHY_PWR_EN_GPIO	RK30_PIN1_PD6
-#include "board-rk30-sdk-vmac.c"
+#include "../mach-rk30/board-rk30-sdk-vmac.c"
 #endif
 
 #ifdef CONFIG_RFKILL_RK
@@ -3026,7 +3026,7 @@ static struct pmu_info  wm8326_ldo_info[] = {
 	},
 };
 
-#include "board-pmu-wm8326.c"
+#include "../mach-rk30/board-pmu-wm8326.c"
 #endif
 
 #ifdef CONFIG_MFD_TPS65910
@@ -3096,7 +3096,7 @@ static  struct pmu_info  tps65910_ldo_info[] = {
 	},
  };
 
-#include "board-pmu-tps65910.c"
+#include "../mach-rk30/board-pmu-tps65910.c"
 #endif
 
 #ifdef CONFIG_REGULATOR_ACT8846
@@ -3191,7 +3191,7 @@ static  struct pmu_info  act8846_ldo_info[] = {
 	},
  };
 
-#include "board-pmu-act8846.c"
+#include "../mach-rk30/board-pmu-act8846.c"
 #endif
 
 static struct i2c_board_info __initdata i2c1_info[] = {
