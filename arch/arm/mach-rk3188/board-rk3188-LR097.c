@@ -115,6 +115,10 @@
 
 #if defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D8009)
 #include "board-rk3188-curie2qc-camera.c"
+#elif defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D1014)
+#include "board-rk3188-edison2qc-camera.c"
+#elif defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D7022)
+#include "board-rk3188-maxwell2qc-camera.c"
 #else
 #include "../mach-rk30/board-rk3168-LR097-camera.c"
 #endif
@@ -750,8 +754,8 @@ static struct sensor_platform_data lis3de_info = {
 	#elif defined(CONFIG_MALATA_D1013)
 	.orientation = {0, 1, 0, 1, 0, 0, 0, 0, -1},
 	#elif defined(CONFIG_MALATA_D7022)
-	.orientation = {1, 0, 0, 0, -1, 0, 0, 0, -1},//land
-	//.orientation = {0, -1, 0, -1, 0, 0, 0, 0, -1},//Portrait
+	//.orientation = {1, 0, 0, 0, -1, 0, 0, 0, -1},//land
+	.orientation = {0, -1, 0, -1, 0, 0, 0, 0, -1},//Portrait
 	#else
 	.orientation = {0, -1, 0, -1, 0, 0, 0, 0, -1},
 	#endif
@@ -944,7 +948,7 @@ static struct sensor_platform_data akm8963_info =
 		{
 			{1, 0, 0},
 			{0, 1, 0},
-			{0, 0, 1},
+                        {0, 0, 1},
 		},
 	#else
 		{
@@ -972,8 +976,8 @@ static struct sensor_platform_data akm8963_info =
 		},
 	#elif defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D7022)
 		{
-			{1, 0, 0},
-			{0, 1, 0},
+			{0, -1, 0},
+                        {1, 0, 0},
 			{0, 0, -1},
 		},
 	#else
@@ -3134,8 +3138,8 @@ static struct pmu_info  act8846_dcdc_info[] = {
 	{
 		.name          = "act_dcdc4",   //vccio
 		#ifdef CONFIG_MALATA_D7022
-		.min_uv          = 3150000,
-		.max_uv         = 3150000,
+		.min_uv          = 3200000,
+		.max_uv         = 3200000,
 		#else
 		.min_uv          = 3000000,
 		.max_uv         = 3000000,
