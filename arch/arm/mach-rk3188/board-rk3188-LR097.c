@@ -113,12 +113,8 @@
 #include <linux/mpu.h>
 #endif
 
-#if defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D8009)
-#include "board-rk3188-curie2qc-camera.c"
-#elif defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D1014)
-#include "board-rk3188-edison2qc-camera.c"
-#elif defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D7022)
-#include "board-rk3188-maxwell2qc-camera.c"
+#if defined(CONFIG_MALATA_D1004) || defined(CONFIG_MALATA_D1014) || defined(CONFIG_MALATA_D7022) || defined(CONFIG_MALATA_D8009)
+#include "board-rk3188-LR097-camera.c"
 #else
 #include "../mach-rk30/board-rk3168-LR097-camera.c"
 #endif
@@ -948,7 +944,7 @@ static struct sensor_platform_data akm8963_info =
 		{
 			{1, 0, 0},
 			{0, 1, 0},
-                        {0, 0, 1},
+			{0, 0, 1},
 		},
 	#else
 		{
@@ -977,7 +973,7 @@ static struct sensor_platform_data akm8963_info =
 	#elif defined(CONFIG_MALATA_D1004) && defined(CONFIG_MALATA_D7022)
 		{
 			{0, -1, 0},
-                        {1, 0, 0},
+			{1, 0, 0},
 			{0, 0, -1},
 		},
 	#else
