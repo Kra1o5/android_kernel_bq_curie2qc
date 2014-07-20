@@ -41,8 +41,6 @@ static LIST_HEAD(blktrans_majors);
 static DEFINE_MUTEX(blktrans_ref_mutex);
 
 #define MTD_MERGE                       1
-
-
 static void blktrans_dev_release(struct kref *kref)
 {
 	struct mtd_blktrans_dev *dev =
