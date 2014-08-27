@@ -43,12 +43,9 @@ Comprehensive camera device registration:
                           
 */
 
-#if defined(CONFIG_MALATA_D1014) || defined(CONFIG_MALATA_D8009)
+#if defined(CONFIG_MALATA_D1004) || defined(CONFIG_MALATA_D1014) || defined(CONFIG_MALATA_D8009)
 #define FRONT_ORI 0
 #define BACK_ORI  0
-#elif defined(CONFIG_MALATA_D7022)
-#define FRONT_ORI 90
-#define BACK_ORI  270
 #else 
 #define FRONT_ORI INVALID_VALUE
 #define BACK_ORI  INVALID_VALUE
